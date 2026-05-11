@@ -2,6 +2,7 @@
 
 This project contains Python examples of:
 - String Functions
-- List Functions
+- List Functions  
+- Tuple Functions  
 - Set Functions
 - Dictionary Functions
