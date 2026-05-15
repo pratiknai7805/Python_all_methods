@@ -1,29 +1,16 @@
 class Pythonfunction:
 
     def __init__(self):
-        self.s = "hello world"
-        self.l = "hello\tworld"
-        self.text1 = "   hello   "
-        self.name = "Pratik"
-        self.data = {"name": "raj"}
-        self.words = ["hello", "world"]
-        self.p = "hello world python"
-        self.text2 = "hello\nworld"
-        self.table = str.maketrans("h", "H")
+        self.s="hello world"
+        self.text="  hello  "
+        self.words=["hello", "world"]
         self.l1 = [1, 2, 3, 4, 5]
         self.t=(22,12,45,2)
         self.s1 = {1, 2, 3, 4}
         self.s2 = {4, 5, 6}
-        self.a = {1, 2, 3}
-        self.b = {3, 4, 5}
-        self.c = {1, 2, 3}
-        self.d = {2, 3, 4}
-        self.e = {10, 20, 30}
-        self.f = {1, 2, 3}
-        self.g = {3, 4, 5}
         self.d1 = {"name": "pratik", "age": 21}
         self.y = dict.fromkeys(["a", "b", "c"], 0)
-
+        
     def string_function(self):
         print('String function:')
         print(self.s.upper())
@@ -46,12 +33,17 @@ class Pythonfunction:
         print(self.s.isalpha())
         print(self.s.isalnum())
         print(self.s.isascii())
-        print(self.s.isdecimal())
-        print(self.s.isdigit())
-        print(self.s.isidentifier())
-        print(self.s.isnumeric())
-        print(self.s.isspace())
-        print(self.s.istitle())
+
+        print("123".isdecimal())
+        print("123".isdigit())
+
+        print("hello_world".isidentifier())
+
+        print("123".isnumeric())
+
+        print("   ".isspace())
+
+        print("Hello World".istitle())
 
         print(self.s.casefold())
         print(self.s.center(20, "*"))
@@ -63,17 +55,18 @@ class Pythonfunction:
 
         print(self.s.ljust(20, "*"))
         print(self.s.rjust(20, "*"))
-        print(self.l.expandtabs(10))
-        print(self.text1.strip())
-        print(self.text1.lstrip())
 
-        print(self.text1.rstrip())
+        print("hello\tworld".expandtabs(10))
+
+        print(self.text.strip())
+        print(self.text.lstrip())
+        print(self.text.rstrip())
 
         print("Hello {}".format(self.s))
 
-        print("Hello {}".format(self.name))
+        print("Hello {}".format("Pratik"))
 
-        print("Hello {name}".format_map(self.data))
+        print("Hello {name}".format_map({"name": "raj"}))
 
         print(" ".join(self.words))
         print(" ".join(self.s))
@@ -82,11 +75,14 @@ class Pythonfunction:
         print(self.s.rpartition(" "))
 
         print(self.s.split())
-        print(self.p.rsplit(" ", 1))
 
-        print(self.text2.splitlines())    
+        print("hello world python".rsplit(" ", 1))
 
-        print(self.s.translate(self.table))
+        print("hello\nworld".splitlines())
+
+        table = str.maketrans("h", "H")
+
+        print(self.s.translate(table))
 
         print("5".zfill(3))
     
@@ -113,27 +109,34 @@ class Pythonfunction:
         print(len(self.l1))
         self.l1.clear()
         print(self.l1)
-
+       
     def tuple_function(self):
         print('Tuple function:')
         print(self.t.count(2))
         print(self.t.index(45))
-
+        
     def set_function(self):
         print('Set function:')
         self.s1.add(9)
         print(self.s1)
-        x = self.s1.copy()
-        print(x)
+        print(self.s1.copy())
+
         print(self.s1.difference(self.s2))
-        self.a.difference_update(self.b)
-        print(self.a)
+
+        self.s1.difference_update(self.s2)
+        print(self.s1)
+
+        self.s1 = {1, 2, 3, 4}
+
         self.s1.discard(2)
         print(self.s1)
+
         print(self.s1.intersection(self.s2))
 
-        self.c.intersection_update(self.d)
-        print(self.c)
+        self.s1.intersection_update(self.s2)
+        print(self.s1)
+
+        self.s1 = {1, 2, 3, 4}
 
         print(self.s1.isdisjoint(self.s2))
 
@@ -141,18 +144,27 @@ class Pythonfunction:
 
         print({1, 2, 3}.issuperset({1, 2}))
 
-        print(self.e.pop())
-        print(self.e)
-        self.s1.remove(1)
+        print(self.s1.pop())
         print(self.s1)
+
+        self.s1.remove(2)
+        print(self.s1)
+
         print(self.s1.symmetric_difference(self.s2))
-        self.f.symmetric_difference_update(self.g)
-        print(self.f)
+
+        self.s1.symmetric_difference_update(self.s2)
+        print(self.s1)
+
+        self.s1 = {1, 2, 3, 4}
+
         print(self.s1.union(self.s2))
+
         self.s2.update({7, 8, 9})
         print(self.s2)
+
         self.s2.clear()
         print(self.s2)
+       
 
     def dict_function(self):
         print('Dictionary function:')
@@ -182,13 +194,11 @@ class Pythonfunction:
 
         self.d1.clear()
         print(self.d1)
-
-            
-obj= Pythonfunction()
-
+    
+obj=Pythonfunction()
 obj.string_function()
 obj.list_function()
 obj.tuple_function()
 obj.set_function()
 obj.dict_function()
-
+        
